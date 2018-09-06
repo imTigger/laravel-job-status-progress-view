@@ -2,7 +2,7 @@
 
 Progress View page for Laravel Job Status
 
-*** Testing phase only! Currently tightly coupled with my own theme ***
+*** Testing phase only! ***
 
 ## Requirements
 
@@ -30,7 +30,7 @@ Add the following to your `config/app.php`:
 ]
 ```
 
-### Usage
+## Usage
 
 In your `routes.php`, add this route helper:
 
@@ -59,3 +59,9 @@ errors       | Array of String | Optional, Usually for non-fatal exception messa
 message      | String          | Optional, Usually for fatal exception message
 filename     | String          | Optional, Path relative to `storage` folder. If present, redirect to download that file upon finished
 
+## Customization
+
+Run `vendor:publish` to publish progress view
+`php artisan vendor:publish --provider="Imtigger\LaravelJobStatus\LaravelJobStatusServiceProgressViewProvider"`
+
+Then edit `resources/views/vendor/laravel-job-status/progress.blade.php` to adapt it to your favorite theme!
