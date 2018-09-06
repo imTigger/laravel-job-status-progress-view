@@ -1,0 +1,29 @@
+{
+    "name": "imtigger/laravel-job-status-progress-view",
+    "description": "Laravel Job Status Progress View",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Tiger Fok",
+            "email": "tiger@tiger-workshop.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "imtigger/laravel-job-status": "^0.1.14|^0.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Imtigger\\LaravelJobStatus\\LaravelJobStatusServiceProgressViewProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Imtigger\\LaravelJobStatus\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
