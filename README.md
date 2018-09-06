@@ -36,14 +36,15 @@ In your `routes.php`, add this route helper:
 
 ```php
     ...
-    \Imtigger\LaravelJobStatus\ProgressController::routes('admin.progress');
+    \Imtigger\LaravelJobStatus\ProgressController::routes();
 ```
 
-In your controller, redirect to this route
+
+In your controller, redirect to this route after dispatching your job
 
 ```php
     $this->dispatch($job);
-    return redirect()->route("admin.progress", [$job->getJobStatusId()]);
+    return redirect()->action('\Imtigger\LaravelJobStatus\ProgressController@progress', [$job->getJobStatusId()]);
 ```
 
 In your job, write the following fields to outputs
