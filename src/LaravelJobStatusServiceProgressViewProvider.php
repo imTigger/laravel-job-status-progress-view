@@ -18,5 +18,9 @@ class LaravelJobStatusServiceProgressViewProvider extends ServiceProvider
     {
         $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'laravel-job-status');
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-job-status');
+        
+        $this->publishes([
+            __DIR__.'/resources/views/progress.blade.php' => resource_path('views/vendor/laravel-job-status/progress.blade.php'),
+        ]);
     }
 }
