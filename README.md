@@ -57,7 +57,7 @@ skipped_rows | Integer  | Optional, Ditto
 failed_rows  | Integer  | Optional, Ditto
 errors       | Array of String | Optional, Usually for non-fatal exception message
 message      | String          | Optional, Usually for fatal exception message
-filename     | String          | Optional, Path relative to `storage` folder. If present, redirect to download that file upon finished
+filename     | String          | Optional, Path for Storage::get(). If present, redirect to download that file upon finished
 
 ## Customization
 

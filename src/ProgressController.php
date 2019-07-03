@@ -4,6 +4,7 @@ namespace Imtigger\LaravelJobStatus;
 
 use Illuminate\Routing\Controller as BaseController;
 use Imtigger\LaravelJobStatus\JobStatus;
+use Illuminate\Support\Facades\Storage;
 
 class ProgressController extends BaseController
 {
@@ -18,21 +19,21 @@ class ProgressController extends BaseController
     function download($id) {
         $status = JobStatus::findOrFail($id);
 
-        if (!is_file(storage_path($status->output['filename']))) {
+        if (!Storage::exists($status->output['filename'])) {
             abort(404);
         }
 
-        return response()->download(storage_path($status->output['filename']));
+        return Storage::download($status->output['filename']);
     }
     
     function view($id) {
         $status = JobStatus::findOrFail($id);
 
-        if (!is_file(storage_path($status->output['filename']))) {
+        if (!Storage::exists($status->output['filename'])) {
             abort(404);
         }
 
-        return response()->file(storage_path($status->output['filename']));
+        return Storage::get($status->output['filename']);
     }
     
     /**
