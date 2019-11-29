@@ -42,8 +42,8 @@ class ProgressController extends BaseController
      * Shortcut for creating group of named route
      */
     public static function routes($as = 'progress') {
-        \Route::get("progress/{id}", ['as' => "{$as}", 'uses' => "\\" . self::class . "@progress"]);
-        \Route::get("progress/{id}/download", ['as' => "{$as}.download", 'uses' => "\\" . self::class ."@download"]);
-        \Route::get("progress/{id}/view", ['as' => "{$as}.print", 'uses' => "\\" . self::class ."@view"]);
+        \Route::get("progress/{id}", ['as' => "{$as}", 'uses' => "\\" . static::class . "@progress"]);
+        \Route::get("progress/{id}/download", ['as' => "{$as}.download", 'uses' => "\\" . static::class ."@download"]);
+        \Route::get("progress/{id}/view", ['as' => "{$as}.print", 'uses' => "\\" . static::class ."@view"]);
     }
 }
