@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "imtigger/laravel-job-status": "^0.1.14|^0.2"
+        "imtigger/laravel-job-status": "^0.1.14|^0.2|^1.0"
     },
     "extra": {
         "laravel": {
